@@ -28,11 +28,12 @@
                     <h2 class="title">Fill Out the Forms</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <div class="form-row">
                             <div class="name">Full name</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="full_name">
+                                <input class="input--style-6" type="text" name="name">
                             </div>
                         </div>
                         <div class="form-row">
@@ -43,6 +44,31 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-row">
+                            <div class="name">Phone number</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Full name</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" name="name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Full name</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" name="name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Full name</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" name="name">
+                            </div>
+                        </div>
+                        
                         <div class="form-row">
                             <div class="name">Message</div>
                             <div class="value">
