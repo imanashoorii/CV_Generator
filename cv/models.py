@@ -12,7 +12,7 @@ class Profile(models.Model):
     university = models.CharField(max_length=100)
     experience = models.TextField()
     skills = models.TextField()
-    image = models.ImageField(upload_to='images/profile')
+    image = models.ImageField(upload_to='images/profile', blank=True, null=True)
 
 
     def __str__(self):
