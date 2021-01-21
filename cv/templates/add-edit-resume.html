@@ -25,7 +25,7 @@
         <div class="wrapper wrapper--w900">
             <div class="card card-6">
                 <div class="card-heading">
-                    <h2 class="title">Fill Out the Forms</h2>
+                    <h2 class="title">Fill Out the Form</h2>
                 </div>
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data">
@@ -36,6 +36,7 @@
                                 <input class="input--style-6" type="text" name="name">
                             </div>
                         </div>
+
                         <div class="form-row">
                             <div class="name">Email address</div>
                             <div class="value">
@@ -44,6 +45,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-row">
                             <div class="name">Phone number</div>
                             <div class="value">
@@ -86,6 +88,14 @@
                             </div>
                         </div>
                         <div class="form-row">
+                            <div class="name">Summary</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <textarea class="textarea--style-6" name="summary"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
                             <div class="name">Picture</div>
                             <div class="value">
                                 <div class="input-group js-input-file">
@@ -113,7 +123,6 @@
     <!-- Main JS-->
     <script src="{% static "js/global.js" %}"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-
+</body>
 </html>
 <!-- end document-->
