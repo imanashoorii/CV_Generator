@@ -9,6 +9,7 @@ def landing(request):
 def resume_form(request):
     form = ProfileFormItem(request.POST or None, request.FILES)
     if form.is_valid():
+        print(form.cleaned_data)
         form.save()
         return redirect('cv:landing')
 
