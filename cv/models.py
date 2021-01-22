@@ -11,11 +11,13 @@ class Profile(models.Model):
     phone = models.CharField(max_length=100)
     mobile = models.CharField(max_length=100)
     summary = models.TextField()
-    degree = models.CharField(max_length=100)
-    school = models.CharField(max_length=100)
-    university = models.CharField(max_length=100)
+    education = models.TextField()
     experience = models.TextField()
     skills = models.TextField()
+    address_one = models.CharField(max_length=50)
+    address_two = models.CharField(max_length=50)
+    linkedin_url = models.CharField(max_length=500)
+    github_url = models.CharField(max_length=500, null=True, blank=True)
     image = models.ImageField(upload_to='images/profile', blank=True, null=True)
 
 

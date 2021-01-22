@@ -46,200 +46,59 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
+                {% if profile.image == "" or None %}
                 <div class="profile-img">
-                    <img src="img/img-profile.jpg" class="img-responsive" alt=""/>
+                    <img src="{% static "assets/img/img-profile.jpg" %}" class="img-responsive" alt=""/>
                 </div>
+                {% else %}
+                <div class="profile-img">
+                    <img src="{{ profile.image.url }}" class="img-responsive" alt=""/>
+                </div>
+                {% endif %}
                 <!-- Profile Image -->
             </div>
             <div class="col-md-9">
                 <div class="name-wrapper">
-                    <h1 class="name">Damian Keller</h1>
-                    <span>Freelance Web Designer</span>
+                    <h1 class="name">{{ profile.name }}</h1>
+                    <span style="text-transform: capitalize">{{ profile.field }}</span>
                 </div>
                 <p>
-                    Credibly embrace visionary internal or "organic" sources and business benefits. Collaboratively
-                    integrate efficient portals rather than customized customer service. Assertively deliver
-                    frictionless services via leveraged interfaces. Conveniently evisculate accurate sources and
-                    process-centric expertise.Energistically fabricate customized imperatives through cooperative
-                    catalysts for change.
+                    {{ profile.summary }}
                 </p>
 
 
                 <div class="row">
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="personal-details">
                             <strong>OCTOBER 17, 1996</strong>
                             <small>BIRTH</small>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-3">
                         <div class="personal-details">
-                            <strong>{{ profile.nationality }}</strong>
+                            <strong style="text-transform: capitalize">{{ profile.nationality }}</strong>
                             <small>NATIONALITY</small>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="personal-details">
-                            <strong>ENGLISH <span>(NATIVE)</span>, FRENCH <span>(INTERMEDIATE)</span></strong>
+                            <strong style="text-transform: capitalize">{{ profile.language }}</strong>
                             <small>LANGUAGE</small>
                         </div>
                     </div>
                 </div>
 
                 <ul class="social-icon">
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-slack" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                    {% if profile.github_url %}
+                    <li><a href="{{ profile.github_url }}"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                    <li><a href="{{ profile.linkedin_url }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
     </div>
 </header>
 <!-- .header-->
-
-<section class="section-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="section-title">
-                    <h2>My Activity</h2>
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="item-stats">
-                            <div class="item-stats-value">100%</div>
-                            <div class="item-stats-name">Jobs Success</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="item-stats">
-                            <div class="item-stats-value">96%</div>
-                            <div class="item-stats-name">On Budget</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="item-stats">
-                            <div class="item-stats-value">99%</div>
-                            <div class="item-stats-name">On Time</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="item-stats">
-                            <div class="item-stats-value">89%</div>
-                            <div class="item-stats-name">Repeat Hire Rate</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- .activity-wrapper -->
-
-<section class="work-history-wrapper section-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="section-title">
-                    <h2>Work History</h2>
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="item-stats">
-                            <div class="item-stats-value">15096</div>
-                            <div class="item-stats-name">hours worked</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="item-stats">
-                            <div class="item-stats-value">687</div>
-                            <div class="item-stats-name">Work Done</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="item-stats">
-                            <div class="item-stats-value">30</div>
-                            <div class="item-stats-name">Hours weekly Available</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="item-stats">
-                            <div class="item-stats-value">24</div>
-                            <div class="item-stats-name">Hour Response Time</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- .work-history-wrapper -->
-
-<section class="expertise-wrapper section-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="section-title">
-                    <h2>My Specialities</h2>
-                </div>
-            </div>
-
-            <div class="col-md-9">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="expertise-item">
-                            <h3>WordPress Theme Development</h3>
-
-                            <p>
-                                Synergistically strategize customer directed resources rather than principle.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="expertise-item">
-                            <h3>Joomla Template Development </h3>
-
-                            <p>
-                                Quickly repurpose reliable customer service with orthogonal ideas. Competently.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="expertise-item">
-                            <h3>Drupal Template Development</h3>
-
-                            <p>
-                                Interactively myocardinate high standards in initiatives rather than next-generation.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="expertise-item">
-                            <h3>Shopify Theme Design</h3>
-
-                            <p>
-                                Dynamically initiate client-based convergence vis-a-vis performance based. </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- .row -->
-
-
-    </div>
-</section>
-<!-- .expertise-wrapper -->
 
 <section class="section-wrapper skills-wrapper">
     <div class="container">
@@ -255,119 +114,10 @@
                     <div class="col-md-6">
                         <div class="progress-wrapper">
 
-                            <h3>CODING SKILLS</h3>
-
                             <div class="progress-item">
-                                <span class="progress-title">HTML5</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="62" aria-valuemin="0"
-                                         aria-valuemax="100" style="width: 62%"><span
-                                            class="progress-percent"> 62%</span>
-                                    </div>
-                                </div>
-                                <!-- .progress -->
+                                <h3>{{ profile.skills | linebreaks }}</h3>
                             </div>
                             <!-- .skill-progress -->
-
-                            <div class="progress-item">
-                                <span class="progress-title">CSS3</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                         aria-valuemax="100" style="width: 90%"><span
-                                            class="progress-percent"> 90%</span>
-                                    </div>
-                                </div>
-                                <!-- /.progress -->
-                            </div>
-                            <!-- /.skill-progress -->
-
-                            <div class="progress-item">
-                                <span class="progress-title">PHP</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                         aria-valuemax="100" style="width: 75%;"><span
-                                            class="progress-percent"> 75%</span>
-                                    </div>
-                                </div>
-                                <!-- /.progress -->
-                            </div>
-                            <!-- /.skill-progress -->
-
-                            <div class="progress-item">
-                                <span class="progress-title">JavaScript</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
-                                         aria-valuemax="100" style="width: 55%;"><span
-                                            class="progress-percent"> 55%</span>
-                                    </div>
-                                </div>
-                                <!-- /.progress -->
-                            </div>
-                            <!-- /.skill-progress -->
-
-
-                        </div>
-                        <!-- /.progress-wrapper -->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="progress-wrapper">
-                            <h3>DESIGN TOOLS</h3>
-
-                            <div class="progress-item">
-                                <span class="progress-title">Photoshop</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="62" aria-valuemin="0"
-                                         aria-valuemax="100" style="width: 90%"><span
-                                            class="progress-percent"> 90%</span>
-                                    </div>
-                                </div>
-                                <!-- .progress -->
-                            </div>
-                            <!-- .skill-progress -->
-
-                            <div class="progress-item">
-                                <span class="progress-title">Illustrator</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                         aria-valuemax="100" style="width: 70%"><span
-                                            class="progress-percent"> 50%</span>
-                                    </div>
-                                </div>
-                                <!-- /.progress -->
-                            </div>
-                            <!-- /.skill-progress -->
-
-                            <div class="progress-item">
-                                <span class="progress-title">Sketch</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                         aria-valuemax="100" style="width: 75%;"><span
-                                            class="progress-percent"> 75%</span>
-                                    </div>
-                                </div>
-                                <!-- /.progress -->
-                            </div>
-                            <!-- /.skill-progress -->
-
-                            <div class="progress-item">
-                                <span class="progress-title">MACAW</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
-                                         aria-valuemax="100" style="width: 55%;"><span
-                                            class="progress-percent"> 55%</span>
-                                    </div>
-                                </div>
-                                <!-- /.progress -->
-                            </div>
-                            <!-- /.skill-progress -->
 
                         </div>
                         <!-- /.progress-wrapper -->
@@ -392,48 +142,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="content-item">
-                            <small>2015 - Present</small>
-                            <h3>Senior Developer</h3>
-                            <h4>Computer & Motor Ltd.</h4>
-
-                            <p>United Kingdom, London</p>
+                            <p>{{ profile.experience | linebreaks }}</p>
                         </div>
                         <!-- .experience-item -->
                     </div>
-                    <div class="col-md-6">
-                        <div class="content-item">
-                            <small>2012 - 2015</small>
-                            <h3>Webdesigner</h3>
-                            <h4>BizzNiss</h4>
-
-                            <p>United Kingdom, London</p>
-                        </div>
-                        <!-- .experience-item -->
-                    </div>
-                </div>
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <div class="content-item">
-                            <small>2012 - 2015</small>
-                            <h3>Web Developer</h3>
-                            <h4>Unique Soft</h4>
-
-                            <p>United Kingdom, London</p>
-                        </div>
-                        <!-- .experience-item -->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="content-item">
-                            <small>2010 - 2012</small>
-                            <h3>Front-end Developer</h3>
-                            <h4>Somsom LLC</h4>
-
-                            <p>United Kingdom, London</p>
-                        </div>
-                        <!-- .experience-item -->
-                    </div>
-                </div>
             </div>
             <!--.row-->
         </div>
@@ -448,32 +160,11 @@
             <div class="col-md-3">
                 <div class="section-title"><h2>Education</h2></div>
             </div>
-
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="content-item">
-                            <small>2010 - 2012</small>
-                            <h3>MA Product Design</h3>
-                            <h4>University of California</h4>
-
-                            <p>United Kingdom, London</p>
-                        </div>
-                        <!-- .experience-item -->
-                        <div class="content-item">
-                            <small>2007 - 2010</small>
-                            <h3>Business marketing course</h3>
-                            <h4>Royal Academy of Business</h4>
-
-                            <p>United Kingdom, London</p>
-                        </div>
-                        <!-- .experience-item -->
-                        <div class="content-item">
-                            <small>2002 - 2006</small>
-                            <h3>BA (Hons) Design</h3>
-                            <h4>University of Michigan</h4>
-
-                            <p>United Kingdom, London</p>
+                            <p>{{ profile.education | linebreaks }}</p>
                         </div>
                         <!-- .experience-item -->
                     </div>
@@ -502,8 +193,8 @@
                     <div class="col-md-3">
                         <address>
                             <strong>Address</strong><br>
-                            1355 Market Street, Suite 900<br>
-                            San Francisco, CA 94103
+                            {{ profile.address_one }}<br>
+                            {{ profile.address_two }}
 
                         </address>
                     </div>
