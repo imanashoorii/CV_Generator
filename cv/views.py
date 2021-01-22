@@ -15,6 +15,17 @@ def resume_form(request):
     return render(request, 'add-edit-resume.html', {'form': form})
 
 
+def final_resume(request, id):
+    profile = Profile.objects.get(pk=id)
+
+    context = {
+        'profile': profile
+    }
+
+    return render(request, 'final-resume.html', context)
+
+
+
 def delete_item(request, product_id):
     Product.objects.get(id=product_id).delete()
     return HttpResponseRedirect("/")

@@ -4,8 +4,12 @@ from django.db import models
 
 class Profile(models.Model):
     name = models.CharField(max_length=100)
+    field = models.CharField(max_length=100, default='Job Seeker')
+    nationality = models.CharField(max_length=50)
+    language = models.CharField(max_length=500)
     email = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
+    mobile = models.CharField(max_length=100)
     summary = models.TextField()
     degree = models.CharField(max_length=100)
     school = models.CharField(max_length=100)
