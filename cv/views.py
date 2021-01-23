@@ -24,6 +24,11 @@ def final_resume(request, id):
 
     return render(request, 'final-resume.html', context)
 
+def list_view(request):
+    profiles = Profile.objects.all()
+    
+    return render(request, 'list.html', {'profiles':profiles})
+
 
 
 def delete_item(request, product_id):
