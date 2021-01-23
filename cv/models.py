@@ -14,10 +14,9 @@ class Profile(models.Model):
     education = models.TextField()
     experience = models.TextField()
     skills = models.TextField()
+    certificates = models.TextField()
     address_one = models.CharField(max_length=50)
     address_two = models.CharField(max_length=50)
-    linkedin_url = models.CharField(max_length=500)
-    github_url = models.CharField(max_length=500, null=True, blank=True)
     image = models.ImageField(upload_to='images/profile', blank=True, null=True)
 
 
