@@ -31,6 +31,6 @@ def list_view(request):
 
 
 
-def delete_item(request, product_id):
-    Product.objects.get(id=product_id).delete()
+def delete_item(request, pk):
+    Product.objects.get(pk=id).delete()
     return HttpResponseRedirect("/")
